@@ -1,10 +1,14 @@
-nni = [0,1,2,3]
-uni = [4,5,6,7]
-agg_groups = [0,3]
-west_or_east = "west"
-nni_kbps = 10000000000
-uni_kbps = 1000000000
-vlan = 130
+import json
+import sys
+
+siteconf = json.load(sys.stdin)
+nni = siteconf["nni"]
+uni = siteconf["uni"]
+agg_groups = siteconf["agg_groups"]
+west_or_east = siteconf["west_or_east"]
+nni_kbps = siteconf["nni_kbps"]
+uni_kbps = siteconf["uni_kbps"]
+vlan = siteconf["vlan"]
 total_nni_kbps = len(nni) * nni_kbps
 total_uni_kbps = len(uni) * uni_kbps
 nni_range = range(0,21)
